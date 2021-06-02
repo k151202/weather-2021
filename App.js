@@ -10,6 +10,7 @@ export default class extends React.Component {
   state = {
     isLoading: true,
   };
+  // request weather data with axios
   getWeather = async (latitude, longitude) => {
     const {
       data: {
@@ -25,6 +26,7 @@ export default class extends React.Component {
       condition: weather[0].main,
     });
   };
+  // request permission
   getLocation = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
